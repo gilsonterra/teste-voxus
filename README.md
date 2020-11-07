@@ -34,4 +34,4 @@ Esse projeto foi criado usando a linguagem PHP com as seguintes tecnológias:
 - Swagger 3: Documentação da API
 - PHPUnit: Teste automátizado da API
 
-__Por se tratar de um projeto teste não vizando segurança e para facilitar o processo de execusão os arquivos .env e o banco de dados foram versionado.__
+__Por se tratar de um projeto teste não visando segurança e para facilitar o processo de execução os arquivos .env e o banco de dados foram versionado.__
