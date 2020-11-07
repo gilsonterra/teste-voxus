@@ -23,7 +23,7 @@ class Controller extends BaseController
 {
     protected const MENSAGENS = [
         'required' => 'O campo :attribute é obrigatório!',
-        'regex' => 'O campo :attribute é obrigatório!',
+        'regex' => 'O campo :attribute está num formato inválido!',
     ];
 
     protected function createResponse($content, $status = 200, array $headers = [])

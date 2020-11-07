@@ -13,8 +13,14 @@ locais).
 
 ## Instruções
 
-- Para iniciar a api execute o comando abaixo:
+- Para iniciar a api execute o comando abaixo na raiz do projeto:
 
 ```shell
 docker-compose -f "docker-compose.yml" up -d --build
+```
+
+- Para executar os testes execute o comando abaixo na raiz do projeto:
+
+```shell
+./vendor/bin/phpunit tests
 ```

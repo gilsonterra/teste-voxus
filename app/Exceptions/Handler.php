@@ -56,23 +56,19 @@ class Handler extends ExceptionHandler
     {
         $debug = config('app.debug');
 
-        if ($debug) {
-            return parent::render($request, $exception);
-        } else {
-            $rendered = parent::render($request, $exception);
+        $rendered = parent::render($request, $exception);
 
-            if ($exception instanceof NotFoundHttpException) {
-                return $this->renderExceptionToJson($rendered, 'URL_NOT_FOUND');
-            } else if ($exception instanceof MethodNotAllowedHttpException) {
-                return $this->renderExceptionToJson($rendered, 'METHOD_NOT_ALLOWED');
-            } else if ($exception instanceof ValidationException) {
-                $dados = json_decode($rendered->getContent(), JSON_OBJECT_AS_ARRAY);                
-                return $this->renderExceptionToJson($rendered, 'VALIDATION', $dados);
-            } else if ($exception instanceof ModelNotFoundException) {                            
-                return $this->renderExceptionToJson($rendered, 'ENTITY_NOT_FOUND');            
-            } else {
-                return $this->renderExceptionToJson($rendered, $exception->getMessage());
-            }
+        if ($exception instanceof NotFoundHttpException) {
+            return $this->renderExceptionToJson($rendered, 'URL_NOT_FOUND');
+        } else if ($exception instanceof MethodNotAllowedHttpException) {
+            return $this->renderExceptionToJson($rendered, 'METHOD_NOT_ALLOWED');
+        } else if ($exception instanceof ValidationException) {
+            $dados = json_decode($rendered->getContent(), JSON_OBJECT_AS_ARRAY);
+            return $this->renderExceptionToJson($rendered, 'VALIDATION', $dados);
+        } else if ($exception instanceof ModelNotFoundException) {
+            return $this->renderExceptionToJson($rendered, 'ENTITY_NOT_FOUND');
+        } else {
+            return $this->renderExceptionToJson($rendered, $exception->getMessage());
         }
     }
 
