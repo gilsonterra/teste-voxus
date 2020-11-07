@@ -7,7 +7,7 @@ return [
         | Edit to set the api's title
         |--------------------------------------------------------------------------
          */
-        'title' => 'DOCUMENTAÇÃO API LOCALIZAÇÃO',
+        'title' => 'VOXUS - Documentção API Localização',
     ],
 
     'routes' => [
@@ -199,6 +199,8 @@ return [
     |--------------------------------------------------------------------------
      */
     'constants' => [
+        'APP_NAME' => env('APP_NAME', 'VOXUS'),
+        'SERVER' => env('SERVER', sprintf('http://%s:%s/api', env('APP_URL', 'http://localhost'), env('APP_PORT', '9001')))
         // 'SWAGGER_LUME_CONST_HOST' => env('SWAGGER_LUME_CONST_HOST', 'http://my-default-host.com'),
     ],
 ];

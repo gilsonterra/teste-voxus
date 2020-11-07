@@ -10,12 +10,12 @@ use Laravel\Lumen\Routing\Controller as BaseController;
  * @OA\OpenApi(
  *     @OA\Info(
  *         version="1.0.0",
- *         title="Documentação API Localização",
+ *         title=APP_NAME,
  *         @OA\License(name="MIT")
  *     ),
  *     @OA\Server(
  *         description="Servidor API REST",
- *         url="http://localhost:8000/api/",
+ *         url=SERVER,
  *     ),
  * )
  */

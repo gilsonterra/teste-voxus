@@ -48,7 +48,7 @@ class LocalizacaoController extends Controller
      */
     public function buscarLocalizacaoPorUsuario(int $userId)
     {
-        $localizacao = Localizacao::where('user_id', $userId)->get();
+        $localizacao = Localizacao::where('user_id', $userId)->firstOrFail();        
         return $this->createResponse($localizacao);
     }
 

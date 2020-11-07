@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "Documentação API Localização",
+        "title": "Voxus",
         "license": {
             "name": "MIT"
         },
@@ -9,7 +9,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:8000/api/",
+            "url": "http://localhost:9004/api",
             "description": "Servidor API REST"
         }
     ],

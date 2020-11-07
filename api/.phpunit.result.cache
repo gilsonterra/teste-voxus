@@ -1,1 +1,0 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":224:{a:2:{s:7:"defects";a:0:{}s:5:"times";a:3:{s:31:"LocalizacaoTest::testPostMethod";d:0.121;s:50:"LocalizacaoTest::testValidarSeLatitudeEstaInvalida";d:0.007;s:51:"LocalizacaoTest::testValidarSeLongitudeEstaInvalida";d:0.005;}}}

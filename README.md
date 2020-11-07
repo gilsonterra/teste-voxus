@@ -11,10 +11,10 @@ usuário (banco de dados de sua preferência, inclusive, podendo usar cache ou a
 locais).
 - É necessário criar um endpoint da API que retornará dados da localização do usuário requisitado.
 
-## Instalação
+## Instruções
 
-- Primeiramente excute o composer:
+- Para iniciar a api execute o comando abaixo:
 
 ```shell
-composer install
+docker-compose -f "docker-compose.yml" up -d --build
 ```
