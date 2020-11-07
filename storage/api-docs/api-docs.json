@@ -1,0 +1,132 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação API Localização",
+        "license": {
+            "name": "MIT"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api/",
+            "description": "Servidor API REST"
+        }
+    ],
+    "paths": {
+        "/localizacoes/{userId}": {
+            "get": {
+                "tags": [
+                    "Localizacao"
+                ],
+                "summary": "Buscar cordenadas da localização do usuário",
+                "operationId": "App\\Http\\Controllers\\LocalizacaoController::buscarLocalizacaoPorUsuario",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "ID do usuário que deseja saber a localização",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Localização do usuário"
+                    },
+                    "default": {
+                        "description": "Erro inesperado"
+                    }
+                }
+            }
+        },
+        "/localizacoes": {
+            "post": {
+                "tags": [
+                    "Localizacao"
+                ],
+                "summary": "Atualiza a localização de algum usuário",
+                "operationId": "store",
+                "requestBody": {
+                    "description": "Dados da cordenada da localização do usuário",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LocalizacaoRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Dados da cordenada atualizados",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LocalizacaoResponse"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Erro inesperado"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Erro": {
+                "title": "Erro",
+                "description": "Erro inesperado pelo servidor",
+                "properties": {
+                    "code": {
+                        "type": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "LocalizacaoRequest": {
+                "title": "LocalizacaoRequest",
+                "description": "Dados da localização do usuário",
+                "properties": {
+                    "user_id": {
+                        "type": "integer"
+                    },
+                    "latitude": {
+                        "type": "string"
+                    },
+                    "longitude": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "LocalizacaoResponse": {
+                "title": "LocalizacaoResponse",
+                "type": "object",
+                "allOf": [
+                    {
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    {
+                        "$ref": "#/components/schemas/LocalizacaoRequest"
+                    }
+                ]
+            }
+        }
+    }
+}
