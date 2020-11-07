@@ -33,6 +33,7 @@ RUN composer install --prefer-dist --no-scripts --no-autoloader && rm -rf /root/
 RUN composer dump-autoload --no-scripts --optimize
 
 RUN chown -R www-data:www-data .
-RUN chmod -R o+w ./storage
+RUN chmod -R 644 ./storage/
+RUN chmod -R 755 ./storage/
 
 CMD ["bash", "bootstrap.sh"]
