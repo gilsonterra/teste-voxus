@@ -2,7 +2,6 @@
 
 use App\Models\Localizacao;
 use Database\Factories\LocalizacaoFactory;
-use Laravel\Lumen\Testing\DatabaseMigrations;
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
 class LocalizacaoTest extends TestCase

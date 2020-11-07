@@ -29,7 +29,7 @@ $app->withEloquent();
 $app->configure('swagger-lume');
 $app->register(\SwaggerLume\ServiceProvider::class);
 
-
+//$app->register(\Illuminate\Redis\RedisServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
