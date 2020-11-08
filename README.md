@@ -15,15 +15,17 @@ locais).
 
 - Para iniciar a api execute o comando abaixo na raiz do projeto:
 
-```shell
-docker-compose -f "docker-compose.yml" up -d --build
-```
+    ```shell
+    docker-compose -f "docker-compose.yml" up -d --build
+    ```
+
+- Após a docker terminar de compilar o sistema estará disponível no seguinte endereço: [http://localhost:9004/api/documentacao](http://localhost:9004/api/documentacao)
 
 - Para executar os testes execute o comando abaixo na raiz do projeto:
 
-```shell
-./vendor/bin/phpunit tests
-```
+    ```shell
+    ./vendor/bin/phpunit tests
+    ```
 
 ## Observações
 

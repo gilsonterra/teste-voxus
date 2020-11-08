@@ -33,7 +33,9 @@ RUN composer install --prefer-dist --no-scripts --no-autoloader && rm -rf /root/
 RUN composer dump-autoload --no-scripts --optimize
 
 RUN chown -R www-data:www-data .
-RUN chmod -R 644 ./storage/*
-RUN chmod -R 755 ./storage/*
+
+RUN chmod -R 777 storage
+
+RUN php artisan swagger-lume:generate 
 
 CMD ["bash", "bootstrap.sh"]
