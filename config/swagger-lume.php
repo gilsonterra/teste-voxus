@@ -200,7 +200,7 @@ return [
      */
     'constants' => [
         'APP_NAME' => env('APP_NAME', 'VOXUS'),
-        'SERVER' => env('SERVER', sprintf('http://%s:%s/api', env('APP_URL', 'http://localhost'), env('APP_PORT', '9001')))
+        'SERVER' => env('SERVER', sprintf('%s:%s/api', env('APP_URL', 'http://localhost'), env('APP_PORT', '9001')))
         // 'SWAGGER_LUME_CONST_HOST' => env('SWAGGER_LUME_CONST_HOST', 'http://my-default-host.com'),
     ],
 ];
