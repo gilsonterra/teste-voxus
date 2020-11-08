@@ -34,8 +34,6 @@ RUN composer dump-autoload --no-scripts --optimize
 
 RUN chown -R www-data:www-data .
 
-RUN chmod -R 777 storage
-
-RUN php artisan swagger-lume:generate 
+RUN chmod -R 777 storage 
 
 CMD ["bash", "bootstrap.sh"]
