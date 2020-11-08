@@ -1,4 +1,4 @@
-# Localização do Usuário
+# VOXUS - API de localização do usuário
 
 ## Requisitos
 
